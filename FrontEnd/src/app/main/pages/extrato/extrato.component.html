@@ -1,0 +1,24 @@
+<h1>Extratos</h1>
+
+<nz-table #basicTable [nzData]="this.listExtratos" class="table-extratos">
+  <thead>
+    <tr>
+      <th>Descrição</th>
+      <th>Tipo</th>
+      <th>Valor</th>
+      <th>Usuário</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.descricao }}</td>
+      <td>{{ data.tipo }}</td>
+      <td>{{ data.valor | currency:'BRL' }}</td>
+      <td>{{ data.usuario }}</td>
+      <td class="column-buttons">
+        <button nz-button nzType="primary" nzShape="circle" nz-tooltip nzTooltipTitle="Mais detalhes"><span nz-icon nzType="eye"></span></button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

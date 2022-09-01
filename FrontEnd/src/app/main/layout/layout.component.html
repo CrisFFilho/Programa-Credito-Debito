@@ -1,0 +1,28 @@
+<nz-layout class="app-layout">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu nzOpen nzTitle="User" nzIcon="user">
+        <ul>
+          <li nz-menu-item routerLinkActive="contas" nzMatchRouter routerLink="contas">Contas</li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Dados Bancários" nzIcon="credit-card">
+        <ul>
+          <li nz-menu-item routerLinkActive="debito"  nzMatchRouter  routerLink="debito">Debito</li>
+          <li nz-menu-item routerLinkActive="credito" nzMatchRouter routerLink="credito">Crédito</li>
+          <li nz-menu-item routerLinkActive="extrato" nzMatchRouter routerLink="extrato">Extrato</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></span>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>Desenvolvido por Cristian Fracalossi Filho</nz-footer>
+  </nz-layout>
+</nz-layout>
